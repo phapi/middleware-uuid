@@ -1,0 +1,37 @@
+{
+  "name": "phapi/middleware-uuid",
+  "description": "Phapi UUID middleware generates and adds UUID to request and response for easier debugging.",
+  "keywords": [
+    "middleware", "uuid", "phapi"
+  ],
+  "version": "1.0.0",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "homepage": "http://phapi.github.io",
+  "authors": [
+    {
+      "name": "Peter Ahinko",
+      "email": "peter@ahinko.se",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "phapi/contract": "dev-master"
+  },
+  "require-dev": {
+    "phapi/http": "dev-master",
+    "phpunit/phpunit": "4.6.*",
+    "codeclimate/php-test-reporter": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Phapi\\Middleware\\Uuid\\": "src/Phapi/Middleware/Uuid/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Phapi\\Tests\\Middleware\\Uuid\\": "tests/Phapi/Middleware/Uuid/"
+    }
+  }
+}
