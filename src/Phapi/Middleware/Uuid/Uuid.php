@@ -51,7 +51,7 @@ class Uuid implements Middleware
      *
      * @return  string
      */
-    public static function uuid4()
+    public function uuid4()
     {
         if (function_exists('openssl_random_pseudo_bytes')) {
             $data = openssl_random_pseudo_bytes(16);
@@ -71,7 +71,7 @@ class Uuid implements Middleware
      * @param $uuid
      * @return bool
      */
-    public static function isValid($uuid)
+    public function isValid($uuid)
     {
         return preg_match(
             '/^\{?[0-9a-f]{8}\-?[0-9a-f]{4}\-?[0-9a-f]{4}\-?'.
