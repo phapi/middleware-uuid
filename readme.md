@@ -1,6 +1,15 @@
 # UUID Middleware
 The Phapi UUID Middleware generates an UUID (version 4) and adds it to the request object (as an attribute) and as a header to the response object.
 
+## Installation
+This middleware is by default included in the [Phapi Framework](https://github.com/phapi/phapi) but if you need to install it it's available to install via [Packagist](https://packagist.org) and [Composer](https://getcomposer.org).
+
+```shell
+$ php composer.phar require phapi/middleware-uuid:1.*
+```
+
+## Usage
+
 ```php
 <?php
 // Get the attribute from the request
