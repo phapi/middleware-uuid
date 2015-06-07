@@ -17,19 +17,24 @@ class UuidTest extends TestCase
     {
         $middleware = new Uuid();
 
-        $request = new Request();
-        $response = new Response();
+        $request = \Mockery::mock('Psr\Http\Message\ServerRequestInterface');
+        $request->shouldReceive('withAttribute')->withArgs(['uuid', \Mockery::type('string') OR \Mockery::not('') OR \Mockery::not(null)]);
+
+        $response = \Mockery::mock('Psr\Http\Message\ResponseInterface');
+        $response->shouldReceive('withHeader')->withArgs(['uuid', \Mockery::type('string') OR \Mockery::not('') OR \Mockery::not(null)]);
 
         $response = $middleware(
             $request,
             $response,
             function ($request, $response) {
-                $this->assertNotNull($request->getAttribute('uuid', null));
                 return $response;
             }
         );
-        $this->assertTrue($response->hasHeader('uuid'));
-        $this->assertTrue($middleware->isValid($response->getHeaderLine('uuid')));
+    }
+
+    public function testValid() {
+        $middleware = new Uuid();
+        $this->assertTrue($middleware->isValid($middleware->uuid4()));
     }
 
     public function testValidFail()
