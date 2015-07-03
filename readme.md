@@ -11,7 +11,7 @@ $ php composer.phar require phapi/middleware-uuid:1.*
 ## Configuration
 The middleware itself does not have any configuration options.
 
-See the [configuration documentation](http://phapi.github.io/started/configuration/) for more information about how to configure the integration with the Phapi Framework.
+See the [configuration documentation](http://phapi.github.io/docs/started/configuration/) for more information about how to configure the integration with the Phapi Framework.
 
 ## Usage
 
